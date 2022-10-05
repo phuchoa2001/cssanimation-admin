@@ -5,12 +5,12 @@ import { useHistory } from 'react-router-dom';
 import TableData from '../../components/TableData';
 import useColumns from './useColumns';
 import { useCustomSearchParams } from '../../hooks/useCustomSearchParams';
-import { useImages, useDeleteImage } from './queries/queries';
+import { useAnimation, useDeleteAnimation } from './queries/queries';
 import WrapperMaindash from '../../components/WrapperMaindash';
 import { CREATE } from '../../routes/contant'
 
 
-function Image(props) {
+function Animation(props) {
     const [search, setSearch] = useCustomSearchParams();
     const history = useHistory();
     const argument = {
@@ -19,8 +19,8 @@ function Image(props) {
             keepPreviousData: true,
         },
     };
-    const { data, isLoading } = useImages(argument);
-    const { mutate } = useDeleteImage(argument);
+    const { data, isLoading } = useAnimation(argument);
+    const { mutate } = useDeleteAnimation(argument);
     const { columns } = useColumns();
 
 
@@ -28,16 +28,16 @@ function Image(props) {
         setSearch({ ...search, page_size: query.pageSize, page: query.current })
     }
     const handleAdd = () => {
-        history.push(`/images${CREATE}`)
+        history.push(`/animations${CREATE}`)
     }
     const handleEdit = (selectedRowKeys) => {
-        alert("Phần này không có Edit")
+        history.push(`/animations/edit/${selectedRowKeys[0]}`)
     }
     const handleDelete = (selectedRowKeys) => {
         mutate(selectedRowKeys);
     }
     return (
-        <WrapperMaindash title={"Danh Sách hình ảnh"}>
+        <WrapperMaindash title={"Danh Sách Animation"}>
             {!isLoading ?
                 < TableData
                     rowKey="_id"
@@ -60,4 +60,4 @@ function Image(props) {
     );
 }
 
-export default Image;
+export default Animation;

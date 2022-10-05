@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, {  useState } from "react";
 import { Form, Modal, Button, Spin } from "antd";
 import styled from "styled-components";
 
@@ -8,7 +8,7 @@ import { categoryApi } from "../../api/categoryApi";
 import Permission from "../../components/permission/Permission";
 
 function ModalAdd({ isModalOpen, setIsModalOpen, id, setId, refetch }) {
-  const formElemt = useRef();
+  const [form] = Form.useForm();
   const [isLoading, setisLoading] = useState(false);
   const argument = {
     params: {
@@ -34,7 +34,7 @@ function ModalAdd({ isModalOpen, setIsModalOpen, id, setId, refetch }) {
     setId(null);
     refetch();
     setIsModalOpen(false);
-    formElemt.current.setFieldsValue({ name: "" });
+    form.setFieldsValue({ name: "" });
   };
   const onFinish = async (values) => {
     setisLoading(true);
@@ -56,7 +56,7 @@ function ModalAdd({ isModalOpen, setIsModalOpen, id, setId, refetch }) {
           name="control-hooks"
           onFinish={onFinish}
           className="form"
-          ref={formElemt}
+          form={form}
           initialValues={{ ...data?.data } || {}}
         >
           {isModalOpen && (

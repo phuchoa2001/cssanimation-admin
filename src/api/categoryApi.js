@@ -2,18 +2,18 @@ import axiosClient from './axiosClient';
 
 export const categoryApi = {
     getAll(params) {
-        return axiosClient.get("/admin/category", { params });
+        return axiosClient.get("/css/category", { params });
     },
     getId(id) {
-        return axiosClient.get(`/admin/category/${id}`);
+        return axiosClient.get(`/css/category/${id}`);
     },
     add(data) {
-        return axiosClient.post("/admin/category", data);
+        return axiosClient.post("/css/category", data);
     },
     patch({ data, id }) {
-        return axiosClient.patch(`/admin/category/${id}`, data);
+        return axiosClient.patch(`/css/category/${id}`, data);
     },
     delete(ids) {
-        return axiosClient.delete("/admin/category", { data: { ids } });
+        return axiosClient.delete("/css/category", { data: { ids } });
     },
 };

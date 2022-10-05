@@ -1,8 +1,8 @@
 import React from 'react';
 import { Spin } from 'antd';
 //  Data
-import useColumns from '../../../app/useColumns';
-import { useApp } from '../../../app/queries/queries';
+import useColumns from '../../../animation/useColumns';
+import { useAnimation } from '../../../animation/queries/queries';
 import { useCustomSearchParams } from '../../../../hooks/useCustomSearchParams';
 import TableData from '../../../../components/TableData';
 
@@ -18,7 +18,7 @@ function ListOrder(props) {
             keepPreviousData: true,
         },
     };
-    const { data, isPreviousData, isFetching, isLoading } = useApp(argument);
+    const { data, isPreviousData, isFetching, isLoading } = useAnimation(argument);
     const { columns } = useColumns();
 
 

@@ -23,16 +23,16 @@ function ListCard() {
           <>
             <Card
               icon={<ProjectOutlined />}
-              title="Ứng dụng"
-              onClick={() => history.push("/apps")}
+              title="Animation"
+              onClick={() => history.push("/animations")}
               value={data.data[0].total}
               color="linear-gradient(rgb(187, 103, 255) 0%, rgb(196, 132, 243) 100%)"
               boxShadow="rgb(224 198 245) 0px 10px 20px 0px"
             />
             <Card
-              icon={<FileImageOutlined />}
-              title="Hình ảnh"
-              onClick={() => history.push("/images")}
+              icon={<ProjectOutlined />}
+              title="Animation"
+              onClick={() => history.push("/animations")}
               value={data.data[1].total}
               color="linear-gradient(rgb(255, 145, 157) 0%, rgb(252, 146, 157) 100%)"
               boxShadow="rgb(253 192 199) 0px 10px 20px 0px"

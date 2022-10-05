@@ -12,6 +12,7 @@ import WrapperMaindash from '../../components/WrapperMaindash';
 function Category(props) {
     const [search, setSearch] = useCustomSearchParams();
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     const [id, setId] = useState(null);
     const argument = {
         params: search,

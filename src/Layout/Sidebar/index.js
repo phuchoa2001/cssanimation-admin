@@ -41,7 +41,7 @@ function SideBar(props) {
             <div className={Styles.wrapper}>
                 <div className={Styles.logo} onClick={() => history.push("/")}>
                     <img src={Logo} className={Styles.img} alt={"logo"} />
-                    <p className={Styles.text}>Xoa<span className={Styles.span}>Ne</span>n</p>
+                    <p className={Styles.text}>Anima<span className={Styles.span}>ti</span>on</p>
                 </div>
                 <LoginStyles>
                     <p className='text'>{permission === "CLIENT" ? "Khách lạ" : permission}</p>

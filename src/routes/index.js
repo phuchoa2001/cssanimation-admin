@@ -1,22 +1,17 @@
 import Home from '../page/Home';
 import Link404 from '../page/Link404';
 
-import { AppRouter } from './app';
-import { ImageRouter } from './Image';
-import { IconRouter } from './Icon';
+import { AnimationRouter } from './animation';
 import { CategoryRouter } from './Category';
-import { BlogRouter } from './blogs';
+
 const router = [
     {
         path: "/",
         exact: true,
         mani: () => <Home />,
     },
-    ...AppRouter,
-    ...ImageRouter,
-    ...IconRouter,
+    ...AnimationRouter,
     ...CategoryRouter,
-    ...BlogRouter,
     {
         path: "",
         exact: true,

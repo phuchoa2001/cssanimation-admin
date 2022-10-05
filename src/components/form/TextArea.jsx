@@ -32,8 +32,7 @@ function TextAreaForm({
       <TextArea
         placeholder={placeholder}
         autoSize={{
-          minRows: 3,
-          maxRows: 5,
+          minRows: 3
         }}
         disabled={disabled}
         bordered={false}
